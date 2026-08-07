@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+==============================================================================
+Projeto : ValidES - Aplicativo Acadêmico para Testes de Software e OOP
+Arquivo : ModuleTemplate.fxml
+Objetivo: Template oficial para criação das telas filhas do sistema.
+
+Este arquivo NÃO deve ser carregado em execução.
+Utilize-o apenas como modelo para novas telas.
+
+Última atualização: 2026-07-03   -   Versão 2.0
+==============================================================================
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            styleClass="painel-modulo">
+
+    <!-- ===================================================== -->
+    <!-- CABEÇALHO                                             -->
+    <!-- ===================================================== -->
+
+    <top>
+
+        <VBox spacing="5">
+
+            <padding>
+                <Insets top="15" right="15" bottom="10" left="15"/>
+            </padding>
+
+            <Label text="Título do Módulo"
+                   styleClass="titulo-modulo"/>
+
+            <Label text="Descrição resumida da funcionalidade."
+                   styleClass="descricao-modulo"/>
+
+            <Separator/>
+
+        </VBox>
+
+    </top>
+
+    <!-- ===================================================== -->
+    <!-- CENTRO                                                 -->
+    <!-- ===================================================== -->
+
+    <center>
+
+        <VBox spacing="15">
+
+
+            <padding>
+                <Insets top="15" right="15" bottom="15" left="15"/>
+            </padding>
+
+            <TitledPane
+                text="Dados de Entrada"
+                collapsible="false"
+                styleClass="painel-entrada">
+
+                <content>
+
+					<!--
+					=========================================================
+					
+					Área destinada aos componentes específicos
+					de cada módulo.
+					
+					Não alterar a estrutura.
+					
+					Somente inserir novos controles.
+					
+					=========================================================
+					-->
+
+					<GridPane
+					    hgap="10"
+					    vgap="10">
+					
+					    <!--
+					        Coluna 0 -> Labels
+					
+					        Coluna 1 -> Componentes
+					
+					        Este GridPane deverá ser utilizado
+					        como padrão para todas as telas.
+					    -->
+					
+					</GridPane>
+
+                </content>
+
+            </TitledPane>
+
+            <TitledPane
+                text="Resultado"
+                collapsible="false"
+                expanded="true"
+                collapsible="false"
+                styleClass="painel-resultado">
+
+                <content>
+
+					<TextArea
+					    editable="false"
+					    wrapText="true"
+					    prefHeight="180"
+					    VBox.vgrow="ALWAYS"/>
+
+                </content>
+
+            </TitledPane>
+
+        </VBox>
+
+    </center>
+
+    <!-- ===================================================== -->
+    <!-- BARRA DE AÇÕES                                        -->
+    <!-- ===================================================== -->
+
+    <bottom>
+
+        <HBox
+            spacing="10"
+            styleClass="barra-acoes">
+
+            <padding>
+                <Insets top="10" right="15" bottom="15" left="15"/>
+            </padding>
+
+			<Button
+			    fx:id="btnExecutar"
+			    text="Executar"
+			    styleClass="botao-principal"/>
+
+			<Button
+			    fx:id="btnLimpar"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+			<Button
+			    fx:id="btnFechar"/>
+
+        </HBox>
+
+    </bottom>
+
+</BorderPane>
