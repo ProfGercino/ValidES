@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane
+    xmlns="http://javafx.com/javafx/25"
+    xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="br.com.valides.controller.validadores.ValidadorCPFController"
+    stylesheets="@../../styles/application.css">
+
+    <!-- ===================================================== -->
+    <!-- CABEÇALHO                                              -->
+    <!-- ===================================================== -->
+
+    <top>
+
+        <VBox spacing="10">
+
+            <padding>
+                <Insets top="15" right="15" bottom="10" left="15"/>
+            </padding>
+
+            <Label
+                text="Validador de CPF"
+                styleClass="titulo-tela"/>
+
+        </VBox>
+
+    </top>
+
+    <!-- ===================================================== -->
+    <!-- ÁREA CENTRAL                                           -->
+    <!-- ===================================================== -->
+
+    <center>
+
+        <VBox spacing="15">
+
+            <padding>
+                <Insets top="10" right="15" bottom="10" left="15"/>
+            </padding>
+
+            <!-- Dados de Entrada -->
+
+            <GridPane
+                hgap="10"
+                vgap="10">
+
+                <Label
+                    text="CPF:"
+                    GridPane.columnIndex="0"
+                    GridPane.rowIndex="0"/>
+
+                <TextField
+                    fx:id="txtCPF"
+                    promptText="Informe o CPF (com ou sem máscara)"
+                    prefWidth="260"
+                    GridPane.columnIndex="1"
+                    GridPane.rowIndex="0"/>
+
+            </GridPane>
+
+            <!-- Resultado -->
+
+            <Label text="Resultado da Validação"/>
+
+            <TextArea
+                fx:id="txtResultado"
+                editable="false"
+                wrapText="true"
+                prefHeight="240"/>
+
+
+
+        </VBox>
+
+    </center>
+
+    <!-- ===================================================== -->
+    <!-- RODAPÉ                                                 -->
+    <!-- ===================================================== -->
+
+    <bottom>
+
+        <HBox spacing="10">
+
+            <padding>
+                <Insets top="10" right="15" bottom="15" left="15"/>
+            </padding>
+
+            <Button
+                text="Executar"
+                onAction="#executar"/>
+
+            <Button
+                text="Limpar"
+                onAction="#limpar"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Button
+                text="Fechar"
+                onAction="#fechar"/>
+
+        </HBox>
+
+    </bottom>
+
+</BorderPane>

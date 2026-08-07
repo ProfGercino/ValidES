@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+==============================================================================
+Projeto : ValidES
+Arquivo : ConversaoDataView.fxml
+Objetivo: Conversão de datas
+==============================================================================
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="br.com.valides.controller.conversoes.ConversaoDataController"
+            styleClass="painel-modulo">
+            
+    <!-- ========================================================= -->
+    <!-- CABEÇALHO -->
+    <!-- ========================================================= -->
+
+	<top>
+		<VBox spacing="5">
+
+			<padding>
+				<Insets top="10" right="10" bottom="10" left="10"/>
+			</padding>
+			
+			<Label text="Conversão de Data"
+			       styleClass="titulo-modulo"/>
+			
+			<Label text="Módulo destinado a conversão de datas."
+			       styleClass="descricao-modulo"/>
+			
+			<Separator/>
+
+		</VBox>
+	</top>
+
+    <!-- ========================================================= -->
+    <!-- ÁREA CENTRAL -->
+    <!-- ========================================================= -->
+
+    <center>
+
+        <VBox spacing="15">
+        
+			<padding>
+			    <Insets top="10" right="10" bottom="10" left="10"/>
+			</padding>
+
+            <!-- Painel de Entrada -->
+
+            <TitledPane text="Entrada de Dados"
+                         collapsible="false">
+
+                <GridPane hgap="10"  vgap="10">
+
+                    <Label text="Data (dd/MM/yyyy):"
+                           GridPane.rowIndex="0"
+                           GridPane.columnIndex="0"/>
+
+                    <TextField fx:id="txtData"
+                               promptText="Ex.: 25/12/2025"
+                               prefWidth="180"
+                               GridPane.rowIndex="0"
+                               GridPane.columnIndex="1"/>
+
+                </GridPane>
+
+            </TitledPane>
+
+            <!-- Painel de Resultado -->
+
+            <TitledPane text="Resultado"  collapsible="false"
+                         VBox.vgrow="ALWAYS">
+
+                <TextArea fx:id="txtResultado"
+                          editable="false"
+                          wrapText="true"
+                          prefHeight="260"/>
+
+            </TitledPane>
+
+        </VBox>
+
+    </center>
+
+    <!-- ========================================================= -->
+    <!-- BARRA DE AÇÕES -->
+    <!-- ========================================================= -->
+
+    <bottom>
+
+        <HBox spacing="10" styleClass="barra-acoes">
+              
+			<padding>
+			    <Insets top="10" right="10" bottom="10" left="10"/>
+			</padding>
+
+            <Button
+				fx:id="btnExecutar"
+            	text="Executar"
+				onAction="#executar"/>
+
+            <Button
+            	fx:id="btmLimpar"
+            	text="Limpar"
+                onAction="#limpar"/>
+                    
+	        <Region HBox.hgrow="ALWAYS"/>
+
+            <Button
+            	fx:id="btnFechar"
+	        	text="Fechar"
+				onAction="#fechar"
+				styleClass="botao-secundario"/>
+
+        </HBox>
+
+    </bottom>
+
+</BorderPane>

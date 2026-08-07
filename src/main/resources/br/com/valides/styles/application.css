@@ -1,0 +1,130 @@
+/* ==========================
+   TELA PRINCIPAL
+   ========================== */
+.desktop-pane {
+    -fx-background-color: #F4F4F4;
+}
+
+.status-bar {
+    -fx-padding: 5 10 5 10;
+    -fx-background-color: #EAEAEA;
+    -fx-border-color: #C0C0C0;
+    -fx-border-width: 1 0 0 0;
+}
+
+/* ==========================
+   TELAS FILHAS
+   ========================== */
+   
+.titulo-tela {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.subtitulo-tela {
+    -fx-font-size: 12px;
+}
+
+.painel-tela {
+    -fx-padding: 15;
+    -fx-spacing: 10;
+}
+
+/* ==========================
+   FORMULÁRIOS
+   ========================== */
+
+.campo-numerico {
+
+}
+
+.campo-texto {
+
+}
+
+
+/* ==========================
+   BOTÕES
+   ========================== */
+
+.botao-calcular {
+
+}
+
+.botao-limpar {
+
+}
+
+/* ===========================================================
+   TEMPLATE OFICIAL DE TELAS DO VALIDES
+   =========================================================== */
+
+.painel-modulo{
+
+    -fx-background-color:white;
+
+}
+
+.titulo-modulo{
+
+    -fx-font-size:24px;
+    -fx-font-weight:bold;
+
+}
+
+.descricao-modulo{
+
+    -fx-font-size:14px;
+    -fx-text-fill:#666666;
+
+}
+
+.painel-entrada{
+
+    -fx-font-size:13px;
+
+}
+
+.painel-resultado{
+
+    -fx-font-size:13px;
+
+}
+
+.barra-acoes{
+
+    -fx-alignment:center-left;
+
+}
+
+.botao-principal{
+
+    -fx-min-width:110;
+
+}
+
+.botao-secundario{
+
+    -fx-min-width:110;
+
+}
+
+.grid-form{
+
+    -fx-hgap:10;
+
+    -fx-vgap:10;
+
+}
+
+.label-form{
+
+    -fx-min-width:140;
+
+}
+
+.field-form{
+
+    -fx-pref-width:220;
+
+}
