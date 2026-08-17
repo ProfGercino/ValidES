@@ -1,12 +1,3 @@
-package br.com.valides.test.calculos;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import org.junit.jupiter.api.Test;
-
-import br.com.valides.model.calculos.CalculadoraDesconto;
-import br.com.valides.service.calculos.CalculadoraDescontoService;
-
 /**
  * ************************************************************
  * Projeto.....: ValidES
@@ -18,6 +9,15 @@ import br.com.valides.service.calculos.CalculadoraDescontoService;
  * @author
  *************************************************************
  */
+
+package br.com.valides.test.calculos;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
+
+import br.com.valides.model.calculos.CalculadoraDesconto;
+import br.com.valides.service.calculos.CalculadoraDescontoService;
+
 public class CalculadoraDescontoServiceTest {
 
     /**

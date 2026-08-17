@@ -302,6 +302,8 @@ Módulo   | Situação
 
 ## 20. Convenções para Casos de Estudo
 
+Maven + Surefire + JUnit 5 como o mecanismo oficial de execução dos testes.
+
 ### 20.01 - Nome do módulo:
 Problema do Triângulo
 

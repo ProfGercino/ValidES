@@ -8,11 +8,10 @@ import br.com.valides.service.BaseService;
  * Projeto.....: ValidES
  * Módulo......: Validadores
  * Caso de Estudo: Validador de CPF
- *
  * Service responsável pelas regras de negócio da validação
  * de CPF utilizando o algoritmo oficial baseado no Módulo 11.
  *
- * @author
+ * @author Prof. Gercino
  *************************************************************
  */
 
