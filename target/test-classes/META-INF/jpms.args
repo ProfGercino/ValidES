@@ -1,0 +1,4 @@
+--patch-module
+br.com.valides=_
+--add-reads
+br.com.valides=ALL-UNNAMED
