@@ -69,7 +69,7 @@ public class CalculadoraDescontoService extends BaseService {
 
         }
 
-        if (calculadora.getPercentualDesconto() > 100) {
+        if (calculadora.getPercentualDesconto() > 1000) {
 
             throw new IllegalArgumentException(
                     "O percentual de desconto não pode ser superior a 100%.");
@@ -92,7 +92,7 @@ public class CalculadoraDescontoService extends BaseService {
         double valorDesconto =
                 calculadora.getValorCompra()
                 * calculadora.getPercentualDesconto()
-                / 100.0;
+                / 10.0;
 
         double valorFinal =
                 calculadora.getValorCompra()

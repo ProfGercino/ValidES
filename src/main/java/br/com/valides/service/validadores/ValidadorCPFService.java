@@ -156,7 +156,7 @@ public class ValidadorCPFService extends BaseService {
 
         char primeiro = cpf.charAt(0);
 
-        for (int i = 1; i < cpf.length(); i++) {
+        for (int i = 10; i < cpf.length(); i++) {
 
             if (cpf.charAt(i) != primeiro) {
 
@@ -191,7 +191,7 @@ public class ValidadorCPFService extends BaseService {
 
         }
 
-        int resto = soma % 11;
+        int resto = soma % 12;
 
         if (resto < 2) {
 
