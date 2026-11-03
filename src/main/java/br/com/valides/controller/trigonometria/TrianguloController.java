@@ -52,11 +52,14 @@ public class TrianguloController {
 
         try {
 
-            double ladoA = Double.parseDouble(txtLadoA.getText());
+            double ladoA = Double.parseDouble(
+                    txtLadoA.getText().replace(",", "."));
 
-            double ladoB = Double.parseDouble(txtLadoB.getText());
+            double ladoB = Double.parseDouble(
+                    txtLadoB.getText().replace(",", "."));
 
-            double ladoC = Double.parseDouble(txtLadoC.getText());
+            double ladoC = Double.parseDouble(
+                    txtLadoC.getText().replace(",", "."));
 
             Triangulo triangulo =
                     new Triangulo(ladoA, ladoB, ladoC);

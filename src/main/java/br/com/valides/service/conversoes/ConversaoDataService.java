@@ -3,6 +3,7 @@ package br.com.valides.service.conversoes;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.time.format.ResolverStyle;
 import java.util.Locale;
 
 import br.com.valides.model.conversoes.ConversaoData;
@@ -33,7 +34,12 @@ public class ConversaoDataService extends BaseService {
         String mensagem;
         String dataExtenso = "";
 
-        if (!dataInformada(conversaoData)) {
+        if (conversaoData == null) {
+
+            sucesso = false;
+            mensagem = "Objeto ConversaoData não pode ser nulo.";
+
+        } else if (!dataInformada(conversaoData)) {
 
             sucesso = false;
             mensagem = "Informe uma data.";
@@ -87,7 +93,7 @@ public class ConversaoDataService extends BaseService {
      */
     private boolean formatoValido(ConversaoData conversaoData) {
 
-        return conversaoData.getData()
+        return conversaoData.getData().trim()
                 .matches("\\d{2}/\\d{2}/\\d{4}");
     }
 
@@ -104,11 +110,15 @@ public class ConversaoDataService extends BaseService {
         try {
 
             DateTimeFormatter formatter =
-                    DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                    DateTimeFormatter.ofPattern("dd/MM/uuuu")
+                            .withResolverStyle(ResolverStyle.STRICT);
 
-            return LocalDate.parse(
-                    conversaoData.getData(),
+            LocalDate data = LocalDate.parse(
+                    conversaoData.getData().trim(),
                     formatter);
+
+            // Não existe ano 0 no calendário civil.
+            return data.getYear() >= 1 ? data : null;
 
         } catch (DateTimeParseException ex) {
 
@@ -150,9 +160,13 @@ public class ConversaoDataService extends BaseService {
 
         sb.append("\n");
 
-        sb.append(String.format(
-                "Data Informada.......: %s%n",
-                conversaoData.getData()));
+        if (conversaoData != null) {
+
+            sb.append(String.format(
+                    "Data Informada.......: %s%n",
+                    conversaoData.getData()));
+
+        }
 
         if (sucesso) {
 

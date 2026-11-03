@@ -27,7 +27,12 @@ public class TrianguloService extends BaseService {
 	    String mensagem;
 	    String classificacao = "";
 
-	    if (!ladosValidos(triangulo)) {
+	    if (triangulo == null) {
+
+	        sucesso = false;
+	        mensagem = "Objeto Triangulo não pode ser nulo.";
+
+	    } else if (!ladosValidos(triangulo)) {
 
 	        sucesso = false;
 	        mensagem = "Todos os lados devem ser maiores que zero.";
@@ -72,6 +77,10 @@ public class TrianguloService extends BaseService {
 
     /**
      * Verifica a desigualdade triangular.
+     *
+     * A tolerância, proporcional ao tamanho dos lados, evita que
+     * erros de arredondamento (ex.: 0,1 + 0,2 > 0,3) façam um
+     * triângulo degenerado ser aceito.
      */
     private boolean formaTriangulo(Triangulo triangulo) {
 
@@ -79,9 +88,11 @@ public class TrianguloService extends BaseService {
         double b = triangulo.getLadoB();
         double c = triangulo.getLadoC();
 
-        return (a < b + c)
-            && (b < a + c)
-            && (c < a + b);
+        double tolerancia = 1e-9 * (a + b + c);
+
+        return (a < b + c - tolerancia)
+            && (b < a + c - tolerancia)
+            && (c < a + b - tolerancia);
     }
 
     /**
@@ -124,17 +135,24 @@ public class TrianguloService extends BaseService {
 
         sb.append("\n");
 
-        sb.append(String.format(
-                "Lado A...............: %.2f%n",
-                triangulo.getLadoA()));
+        if (triangulo != null) {
 
-        sb.append(String.format(
-                "Lado B...............: %.2f%n",
-                triangulo.getLadoB()));
+            sb.append(String.format(
+                    LOCALE_BR,
+                    "Lado A...............: %.2f%n",
+                    triangulo.getLadoA()));
 
-        sb.append(String.format(
-                "Lado C...............: %.2f%n",
-                triangulo.getLadoC()));
+            sb.append(String.format(
+                    LOCALE_BR,
+                    "Lado B...............: %.2f%n",
+                    triangulo.getLadoB()));
+
+            sb.append(String.format(
+                    LOCALE_BR,
+                    "Lado C...............: %.2f%n",
+                    triangulo.getLadoC()));
+
+        }
 
         if (sucesso) {
 

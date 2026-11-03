@@ -38,7 +38,8 @@ public class ValidadorCPFService extends BaseService {
         cpf.setCpfNormalizado(cpfNormalizado);
 
         boolean valido =
-                validarCPF(cpfNormalizado);
+                caracteresValidos(cpf.getCpfInformado())
+                && validarCPF(cpfNormalizado);
 
         cpf.setValido(valido);
 
@@ -82,6 +83,20 @@ public class ValidadorCPFService extends BaseService {
                     "Informe um CPF.");
 
         }
+
+    }
+
+    /**
+     * Verifica se o CPF informado contém apenas dígitos e
+     * caracteres de formatação (ponto, hífen e espaço).
+     *
+     * @param cpf CPF informado.
+     * @return true quando os caracteres forem aceitos.
+     */
+
+    private boolean caracteresValidos(String cpf) {
+
+        return cpf.matches("[\\d.\\-\\s]+");
 
     }
 
@@ -156,7 +171,7 @@ public class ValidadorCPFService extends BaseService {
 
         char primeiro = cpf.charAt(0);
 
-        for (int i = 10; i < cpf.length(); i++) {
+        for (int i = 1; i < cpf.length(); i++) {
 
             if (cpf.charAt(i) != primeiro) {
 
@@ -191,7 +206,7 @@ public class ValidadorCPFService extends BaseService {
 
         }
 
-        int resto = soma % 12;
+        int resto = soma % 11;
 
         if (resto < 2) {
 

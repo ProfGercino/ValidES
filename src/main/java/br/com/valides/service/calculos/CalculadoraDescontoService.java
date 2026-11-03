@@ -55,6 +55,20 @@ public class CalculadoraDescontoService extends BaseService {
 
         }
 
+        if (!Double.isFinite(calculadora.getValorCompra())) {
+
+            throw new IllegalArgumentException(
+                    "O valor da compra deve ser um número válido.");
+
+        }
+
+        if (!Double.isFinite(calculadora.getPercentualDesconto())) {
+
+            throw new IllegalArgumentException(
+                    "O percentual de desconto deve ser um número válido.");
+
+        }
+
         if (calculadora.getValorCompra() <= 0) {
 
             throw new IllegalArgumentException(
@@ -69,7 +83,7 @@ public class CalculadoraDescontoService extends BaseService {
 
         }
 
-        if (calculadora.getPercentualDesconto() > 1000) {
+        if (calculadora.getPercentualDesconto() > 100) {
 
             throw new IllegalArgumentException(
                     "O percentual de desconto não pode ser superior a 100%.");
@@ -92,7 +106,7 @@ public class CalculadoraDescontoService extends BaseService {
         double valorDesconto =
                 calculadora.getValorCompra()
                 * calculadora.getPercentualDesconto()
-                / 10.0;
+                / 100.0;
 
         double valorFinal =
                 calculadora.getValorCompra()

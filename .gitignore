@@ -1,0 +1,17 @@
+# Build do Maven
+target/
+
+# IntelliJ IDEA (arquivos locais de cada desenvolvedor)
+.idea/workspace.xml
+.idea/shelf/
+.idea/usage.statistics.xml
+out/
+
+# Logs e dumps do surefire
+*.log
+*.dump
+*.dumpstream
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
